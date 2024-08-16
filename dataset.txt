@@ -1,0 +1,205 @@
+SELECT Queries
+Query: "Show me all records from the users table"
+Intent: SELECT
+Columns: *
+Conditions: None
+Query: "List the names and ages from the employees table"
+Intent: SELECT
+Columns: name, age
+Conditions: None
+Query: "Get the email addresses of all customers"
+Intent: SELECT
+Columns: email
+Conditions: None
+Query: "Retrieve the product names and prices from the products table"
+Intent: SELECT
+Columns: product_name, price
+Conditions: None
+Query: "Fetch all data from the orders table where order_id is 102"
+Intent: SELECT
+Columns: *
+Conditions: order_id = 102
+Query: "Show all users who are older than 30"
+Intent: SELECT
+Columns: *
+Conditions: age > 30
+Query: "List employees from the sales department"
+Intent: SELECT
+Columns: *
+Conditions: department = 'sales'
+Query: "Get the details of products with price less than 50"
+Intent: SELECT
+Columns: *
+Conditions: price < 50
+Query: "Show me the orders placed in the last month"
+Intent: SELECT
+Columns: *
+Conditions: order_date > '2024-06-01'
+Query: "Fetch the usernames of users who signed up this year"
+Intent: SELECT
+Columns: username
+Conditions: signup_date >= '2024-01-01'
+UPDATE Queries
+Query: "Update the age of user with id 5 to 35"
+Intent: UPDATE
+Columns: age = 35
+Conditions: user_id = 5
+Query: "Change the status of order 200 to 'shipped'"
+Intent: UPDATE
+Columns: status = 'shipped'
+Conditions: order_id = 200
+Query: "Set the price of product with id 10 to 15.99"
+Intent: UPDATE
+Columns: price = 15.99
+Conditions: product_id = 10
+Query: "Modify the email of customer with id 3 to 'newemail@example.com'"
+Intent: UPDATE
+Columns: email = 'newemail@example.com'
+Conditions: customer_id = 3
+Query: "Change the department of employee with id 7 to 'marketing'"
+Intent: UPDATE
+Columns: department = 'marketing'
+Conditions: employee_id = 7
+Query: "Update the last login date of user 2 to today"
+Intent: UPDATE
+Columns: last_login = '2024-07-17'
+Conditions: user_id = 2
+Query: "Set the stock quantity of product 25 to 100"
+Intent: UPDATE
+Columns: stock_quantity = 100
+Conditions: product_id = 25
+Query: "Change the address of customer 4 to '123 Main St'"
+Intent: UPDATE
+Columns: address = '123 Main St'
+Conditions: customer_id = 4
+Query: "Update the title of employee with id 8 to 'Manager'"
+Intent: UPDATE
+Columns: title = 'Manager'
+Conditions: employee_id = 8
+Query: "Modify the discount of order 50 to 10%"
+Intent: UPDATE
+Columns: discount = 10
+Conditions: order_id = 50
+INSERT Queries
+Query: "Add a new user with name 'Alice' and age 28"
+Intent: INSERT
+Columns: name = 'Alice', age = 28
+Conditions: None
+Query: "Insert a new product with name 'Laptop' and price 999.99"
+Intent: INSERT
+Columns: product_name = 'Laptop', price = 999.99
+Conditions: None
+Query: "Add a new order with order_id 150 and status 'pending'"
+Intent: INSERT
+Columns: order_id = 150, status = 'pending'
+Conditions: None
+Query: "Insert a new employee with name 'John' and department 'HR'"
+Intent: INSERT
+Columns: name = 'John', department = 'HR'
+Conditions: None
+Query: "Add a new customer with email 'customer@example.com'"
+Intent: INSERT
+Columns: email = 'customer@example.com'
+Conditions: None
+Query: "Insert a new product with id 12 and stock quantity 50"
+Intent: INSERT
+Columns: product_id = 12, stock_quantity = 50
+Conditions: None
+Query: "Add a new order with id 200 and total amount 500.00"
+Intent: INSERT
+Columns: order_id = 200, total_amount = 500.00
+Conditions: None
+Query: "Insert a new user with username 'bob123' and signup date '2024-07-01'"
+Intent: INSERT
+Columns: username = 'bob123', signup_date = '2024-07-01'
+Conditions: None
+Query: "Add a new employee with id 10 and title 'Analyst'"
+Intent: INSERT
+Columns: employee_id = 10, title = 'Analyst'
+Conditions: None
+Query: "Insert a new customer with id 5 and address '456 Elm St'"
+Intent: INSERT
+Columns: customer_id = 5, address = '456 Elm St'
+Conditions: None
+DELETE Queries
+Query: "Delete the user with id 3"
+Intent: DELETE
+Columns: None
+Conditions: user_id = 3
+Query: "Remove the product with id 15"
+Intent: DELETE
+Columns: None
+Conditions: product_id = 15
+Query: "Delete the order with id 80"
+Intent: DELETE
+Columns: None
+Conditions: order_id = 80
+Query: "Remove the customer with id 2"
+Intent: DELETE
+Columns: None
+Conditions: customer_id = 2
+Query: "Delete the employee with id 5"
+Intent: DELETE
+Columns: None
+Conditions: employee_id = 5
+Query: "Remove all orders with status 'cancelled'"
+Intent: DELETE
+Columns: None
+Conditions: status = 'cancelled'
+Query: "Delete users who are inactive"
+Intent: DELETE
+Columns: None
+Conditions: status = 'inactive'
+Query: "Remove products with stock quantity 0"
+Intent: DELETE
+Columns: None
+Conditions: stock_quantity = 0
+Query: "Delete the customer with email 'test@example.com'"
+Intent: DELETE
+Columns: None
+Conditions: email = 'test@example.com'
+Query: "Remove employees from the finance department"
+Intent: DELETE
+Columns: None
+Conditions: department = 'finance'
+Additional Queries for Variety
+Query: "Show all customers who have placed more than 5 orders"
+Intent: SELECT
+Columns: *
+Conditions: orders_count > 5
+Query: "Update the salary of employee with id 9 to 60000"
+Intent: UPDATE
+Columns: salary = 60000
+Conditions: employee_id = 9
+Query: "Insert a new record in the users table with id 7 and username 'charlie'"
+Intent: INSERT
+Columns: user_id = 7, username = 'charlie'
+Conditions: None
+Query: "Delete all products with price more than 1000"
+Intent: DELETE
+Columns: None
+Conditions: price > 1000
+Query: "List the emails of employees who joined this year"
+Intent: SELECT
+Columns: email
+Conditions: join_date >= '2024-01-01'
+Query: "Update the contact number of customer with id 6 to '123-456-7890'"
+Intent: UPDATE
+Columns: contact_number = '123-456-7890'
+Conditions: customer_id = 6
+Query: "Add a new employee with id 11, name 'Eve', and department 'IT'"
+Intent: INSERT
+Columns: employee_id = 11, name = 'Eve', department = 'IT'
+Conditions: None
+Query: "Remove all inactive users from the users table"
+Intent: DELETE
+Columns: None
+Conditions: status = 'inactive'
+Query: "Show the names and addresses of customers who live in 'New York'"
+Intent: SELECT
+Columns: name, address
+Conditions: city = 'New York'
+Query: "Update the stock quantity of product with id 20 to 150"
+Intent: UPDATE
+Columns: stock_quantity = 150
+Conditions: product_id = 20

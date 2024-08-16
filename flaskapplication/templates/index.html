@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio to Text Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #recording {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Audio to Text Converter</h1>
+    <button onclick="startRecording()">Start Recording</button>
+    <button onclick="stopRecording()" id="stopButton" style="display: none;">Stop Recording</button>
+    <p id="transcription"></p>
+
+    <script>
+        let mediaRecorder;
+        let audioChunks = [];
+
+        function startRecording() {
+            document.getElementById('stopButton').style.display = 'inline';
+            document.querySelector('button[onclick="startRecording()"]').style.display = 'none';
+
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.start();
+
+                    mediaRecorder.addEventListener("dataavailable", event => {
+                        audioChunks.push(event.data);
+                    });
+
+                    mediaRecorder.addEventListener("stop", () => {
+                        const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                        const formData = new FormData();
+                        formData.append('audio_data', audioBlob, 'audio.webm');
+
+                        fetch('/convert_audio', {
+                            method: 'POST',
+                            body: formData
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('transcription').innerText = data.text;
+                        })
+                        .catch(error => console.error('Error:', error));
+                    });
+                })
+                .catch(error => console.error('Error accessing microphone:', error));
+        }
+
+        function stopRecording() {
+            mediaRecorder.stop();
+            document.getElementById('stopButton').style.display = 'none';
+            document.querySelector('button[onclick="startRecording()"]').style.display = 'inline';
+        }
+    </script>
+</body>
+</html>

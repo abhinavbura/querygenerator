@@ -1,0 +1,51 @@
+query,intent,columns,conditions
+Show me all records from the users table,SELECT,*,None
+List the names and ages from the employees table,SELECT,"name, age",None
+Get the email addresses of all customers,SELECT,email,None
+Retrieve the product names and prices from the products table,SELECT,"product_name, price",None
+Fetch all data from the orders table where order_id is 102,SELECT,*,order_id = 102
+Show all users who are older than 30,SELECT,*,age > 30
+List employees from the sales department,SELECT,*,department = 'sales'
+Get the details of products with price less than 50,SELECT,*,price < 50
+Show me the orders placed in the last month,SELECT,*,order_date > '2024-06-01'
+Fetch the usernames of users who signed up this year,SELECT,username,signup_date >= '2024-01-01'
+Update the age of user with id 5 to 35,UPDATE,age = 35,user_id = 5
+Change the status of order 200 to 'shipped',UPDATE,status = 'shipped',order_id = 200
+Set the price of product with id 10 to 15.99,UPDATE,price = 15.99,product_id = 10
+Modify the email of customer with id 3 to 'newemail@example.com',UPDATE,email = 'newemail@example.com',customer_id = 3
+Change the department of employee with id 7 to 'marketing',UPDATE,department = 'marketing',employee_id = 7
+Update the last login date of user 2 to today,UPDATE,last_login = '2024-07-17',user_id = 2
+Set the stock quantity of product 25 to 100,UPDATE,stock_quantity = 100,product_id = 25
+Change the address of customer 4 to '123 Main St',UPDATE,address = '123 Main St',customer_id = 4
+Update the title of employee with id 8 to 'Manager',UPDATE,title = 'Manager',employee_id = 8
+Modify the discount of order 50 to 10%,UPDATE,discount = 10,order_id = 50
+Add a new user with name 'Alice' and age 28,INSERT,"name = 'Alice', age = 28",None
+Insert a new product with name 'Laptop' and price 999.99,INSERT,"product_name = 'Laptop', price = 999.99",None
+Add a new order with order_id 150 and status 'pending',INSERT,"order_id = 150, status = 'pending'",None
+Insert a new employee with name 'John' and department 'HR',INSERT,"name = 'John', department = 'HR'",None
+Add a new customer with email 'customer@example.com',INSERT,email = 'customer@example.com',None
+Insert a new product with id 12 and stock quantity 50,INSERT,"product_id = 12, stock_quantity = 50",None
+Add a new order with id 200 and total amount 500.00,INSERT,"order_id = 200, total_amount = 500.00",None
+Insert a new user with username 'bob123' and signup date '2024-07-01',INSERT,"username = 'bob123', signup_date = '2024-07-01'",None
+Add a new employee with id 10 and title 'Analyst',INSERT,"employee_id = 10, title = 'Analyst'",None
+Insert a new customer with id 5 and address '456 Elm St',INSERT,"customer_id = 5, address = '456 Elm St'",None
+Delete the user with id 3,DELETE,None,user_id = 3
+Remove the product with id 15,DELETE,None,product_id = 15
+Delete the order with id 80,DELETE,None,order_id = 80
+Remove the customer with id 2,DELETE,None,customer_id = 2
+Delete the employee with id 5,DELETE,None,employee_id = 5
+Remove all orders with status 'cancelled',DELETE,None,status = 'cancelled'
+Delete users who are inactive,DELETE,None,status = 'inactive'
+Remove products with stock quantity 0,DELETE,None,stock_quantity = 0
+Delete the customer with email 'test@example.com',DELETE,None,email = 'test@example.com'
+Remove employees from the finance department,DELETE,None,department = 'finance'
+Show all customers who have placed more than 5 orders,SELECT,*,orders_count > 5
+Update the salary of employee with id 9 to 60000,UPDATE,salary = 60000,employee_id = 9
+Insert a new record in the users table with id 7 and username 'charlie',INSERT,"user_id = 7, username = 'charlie'",None
+Delete all products with price more than 1000,DELETE,None,price > 1000
+List the emails of employees who joined this year,SELECT,email,join_date >= '2024-01-01'
+Update the contact number of customer with id 6 to '123-456-7890',UPDATE,contact_number = '123-456-7890',customer_id = 6
+"Add a new employee with id 11, name 'Eve', and department 'IT'",INSERT,"employee_id = 11, name = 'Eve', department = 'IT'",None
+Remove all inactive users from the users table,DELETE,None,status = 'inactive'
+Show the names and addresses of customers who live in 'New York',SELECT,"name, address",city = 'New York'
+Update the stock quantity of product with id 20 to 150,UPDATE,stock_quantity = 150,product_id = 20
